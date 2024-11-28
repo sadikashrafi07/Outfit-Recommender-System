@@ -1,0 +1,162 @@
+:root {
+    --neon-primary: #ff00ff;
+    --neon-secondary: #00ffff;
+    --bg-gradient-start: #1a0033;
+    --bg-gradient-end: #000066;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.neon-text {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--neon-primary);
+    text-shadow: 0 0 5px var(--neon-primary),
+                 0 0 10px var(--neon-primary);
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        text-shadow: 0 0 5px var(--neon-primary),
+                     0 0 10px var(--neon-primary);
+    }
+    to {
+        text-shadow: 0 0 3px var(--neon-primary),
+                     0 0 7px var(--neon-primary);
+    }
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--neon-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.selection-section, .upload-section, .manual-upload-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 2rem;
+}
+
+.neon-select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--neon-primary);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.neon-select:focus {
+    box-shadow: 0 0 15px var(--neon-primary);
+}
+
+.neon-button {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--neon-secondary);
+    color: var(--neon-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background: var(--neon-secondary);
+    color: black;
+    box-shadow: 0 0 20px var(--neon-secondary);
+}
+
+.drop-zone {
+    border: 2px dashed var(--neon-secondary);
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+    border-color: var(--neon-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.drop-zone i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--neon-secondary);
+}
+
+.recommendations-section {
+    margin-top: 2rem;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.recommendation-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+}
+
+.recommendation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recommendation-card p {
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    color: var(--neon-secondary);
+    margin-bottom: 1.5rem;
+}

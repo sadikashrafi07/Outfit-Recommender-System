@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Outfit Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="neon-text">AI Outfit Recommender</h1>
+        <p class="subtitle">Get personalized outfit recommendations for any occasion</p>
+
+        <div class="main-content">
+            <div class="selection-section">
+                <h2>Select Event</h2>
+                <select id="eventSelect" class="neon-select">
+                    <option value="">Choose an occasion...</option>
+                    <option value="fall">🍂 Fall</option>
+                    <option value="swimming">🏊‍♂️ Swimming</option>
+                    <option value="job">💼 Job</option>
+                    <option value="graduation">🎓 Graduation</option>
+                    <option value="funeral">💐 Funeral</option>
+                    <option value="vacation">✈️ Vacation</option>
+                    <option value="gym">🏋️‍♂️ Gym</option>
+                </select>
+
+                <div id="gymOptions" class="sub-options hidden">
+                    <select id="gymCategory" class="neon-select">
+                        <option value="">Select category...</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                    </select>
+                </div>
+
+                <button id="getRecommendations" class="neon-button">Get Recommendations</button>
+            </div>
+
+            <div class="upload-section">
+                <h2>Upload Image for Classification</h2>
+                <div id="dropZone" class="drop-zone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag and drop an image here, or click to select</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+            </div>
+        </div>
+
+        <div class="manual-upload-section">
+            <h2>Or Upload Image for Manual Recommendation</h2>
+            <div id="manualDropZone" class="drop-zone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Upload your own image for personalized recommendations</p>
+                <input type="file" id="manualFileInput" accept="image/*" hidden>
+            </div>
+        </div>
+
+        <div id="recommendations" class="recommendations-section hidden">
+            <h2>Recommended Outfits</h2>
+            <div id="recommendationsGrid" class="recommendations-grid"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
